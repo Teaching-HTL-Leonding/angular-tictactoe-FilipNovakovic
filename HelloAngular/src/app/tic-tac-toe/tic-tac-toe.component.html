@@ -1,0 +1,12 @@
+<div class="board">
+  <div *ngFor="let square of board; let i = index"
+       (click)="makeMove(i)"
+       class="square">
+    {{ square }}
+  </div>
+</div>
+
+<p *ngIf="!winner">Next Player: {{ currentPlayer }}</p>
+<p *ngIf="winner">Winner: {{ winner }}</p>
+
+<button (click)="resetGame()">Restart Game</button>
